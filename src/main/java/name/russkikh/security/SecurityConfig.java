@@ -16,8 +16,8 @@ import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 @EnableWebSecurity
 @EnableGlobalMethodSecurity(securedEnabled = true, proxyTargetClass = true)
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
-    private UserDetailsService userDetailsService;
-    private LoginSuccessHandler successHandler;
+    private final UserDetailsService userDetailsService;
+    private final LoginSuccessHandler successHandler;
 
 
     public SecurityConfig(UserDetailsService userDetailsService, LoginSuccessHandler successHandler) {
