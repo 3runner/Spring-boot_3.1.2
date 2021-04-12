@@ -1,6 +1,5 @@
 package name.russkikh.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
@@ -19,7 +18,6 @@ public class User implements UserDetails {
     private String name;
     private String password;
 
-    @JsonIgnore
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(
             name = "users_roles",
@@ -37,9 +35,9 @@ public class User implements UserDetails {
     }
 
     public String rolesToString() {
-        StringBuffer sb = new StringBuffer("");
+        StringBuilder sb = new StringBuilder("");
         for (Role r : roles) {
-            sb.append(r.getName() + " ");
+            sb.append(r.getName()).append(" ");
         }
         return sb.toString();
     }

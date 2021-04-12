@@ -5,7 +5,6 @@
     <link href="/webjars/bootstrap/4.3.1/css/bootstrap.css" rel="stylesheet"/>
     <script type="text/javascript" src="/webjars/jquery/3.4.1/jquery.min.js"></script>
     <script type="text/javascript" src="/webjars/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="../static/main.js" th:src="@{/main.js}"></script>
 
     <meta charset="UTF-8">
     <title>All users</title>
@@ -104,7 +103,7 @@
                 </div>
                 <!--New user-->
                 <div role="tabpanel" class="tab-pane fade" id="newUserPage">
-                    <form th:method="POST" th:action="@{/user/new}" th:object="${user}">
+                    <form th:method="POST" th:action="@{/admin/new}" th:object="${user}">
                         <div class="row justify-content-center pt-3 text-center font-weight-bold">
                             <div class="col-sm-3">
                                 <div class="form-group">
@@ -152,7 +151,7 @@
                     </button>
                 </div>
 
-                <form th:method="PATCH" th:action="@{/update/{id}(id=${user.getId()})}">
+                <form th:method="PATCH" th:action="@{/admin/{id}(id=${user.getId()})}">
                     <div class="modal-body">
 
                         <div class="form-group">
@@ -215,7 +214,7 @@
                     </button>
                 </div>
 
-                <form th:method="DELETE" th:action="@{/delete/{id}(id=${user.getId()})}">
+                <form th:method="DELETE" th:action="@{/admin/{id}(id=${user.getId()})}">
                     <div class="modal-body">
 
                         <div class="form-group">

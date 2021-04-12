@@ -1,6 +1,12 @@
 package name.russkikh.service;
 
-import name.russkikh.dao.RoleRepository;
+import name.russkikh.model.Role;
 
-public interface RoleService extends RoleRepository {
+import java.util.List;
+
+
+public interface RoleService {
+
+    List<Role> findAll();
+
 }
